@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  samswebsite:
+    image: samswebsite
+    build:
+      context: .
+      dockerfile: SamsWebsite\Dockerfile
