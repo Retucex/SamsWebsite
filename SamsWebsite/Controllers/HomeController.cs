@@ -9,5 +9,8 @@ namespace SamsWebsite.Controllers
     public class HomeController : Controller
     {
 	    public ViewResult Index() => View();
+	    public ViewResult Blog() => View();
+	    public ViewResult Projects() => View();
+	    public ViewResult About() => View();
     }
 }
