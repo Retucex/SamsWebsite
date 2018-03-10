@@ -24,7 +24,11 @@ namespace SamsWebsite
 	        app.UseDeveloperExceptionPage();
 	        app.UseStaticFiles();
 	        app.UseStatusCodePages();
-	        app.UseMvc(routes => { routes.MapRoute("Home", "{controller=Home}/{action=Index}/{id?}"); });
+	        app.UseMvc(routes =>
+	        {
+				routes.MapRoute("Home", "{controller=Home}/{action=Index}/{id?}");
+		        routes.MapRoute("Admin", "admin/{*stuff}", defaults: new { controller = "Admin", action = "Index" }); // This no work. What gives?
+			});
         }
     }
 }
