@@ -26,8 +26,7 @@ namespace SamsWebsite
 	        app.UseStatusCodePages();
 	        app.UseMvc(routes =>
 	        {
-				routes.MapRoute("Home", "{controller=Home}/{action=Index}/{id?}");
-		        routes.MapRoute("Admin", "admin/{*stuff}", defaults: new { controller = "Admin", action = "Index" }); // This no work. What gives?
+				routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
 			});
         }
     }

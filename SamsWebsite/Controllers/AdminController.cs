@@ -8,6 +8,6 @@ namespace SamsWebsite.Controllers
 {
     public class AdminController : Controller
     {
-	    public ViewResult Index => View();
+	    public ViewResult Index() => View();
     }
 }
