@@ -1,3 +1,11 @@
-﻿@{
+﻿@model IEnumerable<BlogPost>
+@{
     ViewData["Title"] = "SLIInc - Blog";
+}
+
+@foreach (var post in @Model)
+{
+    <h2>@post.Title</h2>
+    <p>@post.Excerpt</p>
+    @(post.Comments.Count) <span>Comments</span>
 }

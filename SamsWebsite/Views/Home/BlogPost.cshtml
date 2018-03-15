@@ -1,0 +1,13 @@
+﻿@model BlogPost
+@{
+    ViewData["Title"] = $"SLIInc - {@Model.Title}";
+}
+
+<h2>@Model.Title</h2>
+<p>@Model.Article</p>
+
+@foreach (var comment in @Model.Comments)
+{
+    <h5>@comment.Author</h5>
+    <p>@comment.Comment</p>
+}

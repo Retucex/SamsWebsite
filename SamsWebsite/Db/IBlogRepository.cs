@@ -6,7 +6,7 @@ using SamsWebsite.Models;
 
 namespace SamsWebsite.Db
 {
-    interface IBlogRepository
+    public interface IBlogRepository
     {
 		 IQueryable<BlogPost> BlogPosts { get; }
 		 IQueryable<BlogComment> BlogComments { get; }

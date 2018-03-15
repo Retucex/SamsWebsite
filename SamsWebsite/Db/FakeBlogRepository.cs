@@ -18,6 +18,8 @@ namespace SamsWebsite.Db
 	    {
 			bp1 = new BlogPost()
 			{
+				BlogPostID = 1,
+
 				Title = "Some super engaging blog post!",
 
 				Article = "Hi, I am a random article that makes no sense. " +
@@ -27,11 +29,15 @@ namespace SamsWebsite.Db
 					  "but where's the fun in that!? " +
 					  "Anyway, this look longer than a tweet, so I should be good. Yea. Sure.",
 
-				Published = new DateTime(2017, 8, 7, 12, 23, 43)
+				Published = new DateTime(2017, 8, 7, 12, 23, 43),
+
+				Comments = new List<BlogComment>()
 			};
 
 			bp2 = new BlogPost()
 			{
+				BlogPostID = 2,
+
 				Title = "I'm a post with star wars stuff and HTML! WOO!",
 
 				Article = "Did you ever hear the tragedy of Darth Plagueis The Wise? HTML LINEBREAK!!!!<br>" +
@@ -45,11 +51,14 @@ namespace SamsWebsite.Db
 						  "of course, he did. Unfortunately, he taught his apprentice everything he knew, then his " +
 						  "apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.",
 
-				Published = new DateTime(2017, 7, 7, 15, 5, 19)
+				Published = new DateTime(2017, 7, 7, 15, 5, 19),
+
+				Comments = new List<BlogComment>()
 			};
 
 			c1 = new BlogComment()
 			{
+				BlogCommentID = 1,
 				Author = "SomeUser1",
 				Comment = "I'm doing my part!",
 				Published = new DateTime(2017, 8, 7, 13, 3, 3),
@@ -58,6 +67,7 @@ namespace SamsWebsite.Db
 
 			c2 = new BlogComment()
 			{
+				BlogCommentID = 2,
 				Author = "SomeUser2",
 				Comment = "You're SO cool",
 				Published = new DateTime(2017, 8, 7, 17, 30, 12),
@@ -67,6 +77,7 @@ namespace SamsWebsite.Db
 
 			c3 = new BlogComment()
 			{
+				BlogCommentID = 3,
 				Author = "SomeUser1",
 				Comment = "I'm still doing my part! newline\n(strong tag)<strong>go team!</strong>",
 				Published = new DateTime(2017, 7, 7, 17, 50, 9),
