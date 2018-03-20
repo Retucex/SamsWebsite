@@ -22,7 +22,7 @@ namespace SamsWebsite.Db
 
 				Title = "Some super engaging blog post!",
 
-				Article = "Hi, I am a random article that makes no sense. " +
+				Content = "Hi, I am a random article that makes no sense. " +
 					  "Hopefully this ends up larger whatever limit I set for the excerpt " +
 					  "size so I can test that functionality. " +
 					  "Yes, I could preemtively count the characters and leave myself a comment, " +
@@ -30,6 +30,8 @@ namespace SamsWebsite.Db
 					  "Anyway, this look longer than a tweet, so I should be good. Yea. Sure.",
 
 				Published = new DateTime(2017, 8, 7, 12, 23, 43),
+
+				IsVisible = true,
 
 				Comments = new List<BlogComment>()
 			};
@@ -40,7 +42,7 @@ namespace SamsWebsite.Db
 
 				Title = "I'm a post with star wars stuff and HTML! WOO!",
 
-				Article = "Did you ever hear the tragedy of Darth Plagueis The Wise? HTML LINEBREAK!!!!<br>" +
+				Content = "Did you ever hear the tragedy of Darth Plagueis The Wise? HTML LINEBREAK!!!!<br>" +
 						  "I thought not. It’s not a story the Jedi would tell you. NEWLINE CHAR!!\n" +
 						  "It’s a Sith legend.  Darth Plagueis was a Dark Lord of the Sith, " +
 						  "(strong tag)<strong>so</strong> powerful and so wise he could use the Force to " +
@@ -52,6 +54,8 @@ namespace SamsWebsite.Db
 						  "apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.",
 
 				Published = new DateTime(2017, 7, 7, 15, 5, 19),
+
+				IsVisible = true,
 
 				Comments = new List<BlogComment>()
 			};

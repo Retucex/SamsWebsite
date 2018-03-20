@@ -5,7 +5,7 @@
 
 @foreach (var post in @Model)
 {
-    <h2>@post.Title</h2>
+    <h2><a asp-action="Blog" asp-route-blogPost="@post.BlogPostID">@post.Title</a></h2>
     <p>@post.Excerpt</p>
     @(post.Comments.Count) <span>Comments</span>
 }

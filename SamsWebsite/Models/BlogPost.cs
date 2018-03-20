@@ -11,22 +11,23 @@ namespace SamsWebsite.Models
 
 		public int BlogPostID { get; set; }
 		public string Title { get; set; }
-		public string Article { get; set; }
+		public string Content { get; set; }
 
 	    public string Excerpt
 	    {
 		    get
 		    {
-			    if (Article.Length < excerptMaxLength)
+			    if (Content.Length < excerptMaxLength)
 			    {
-				    return Article;
+				    return Content;
 			    }
 
-			    return Article.Substring(0, excerptMaxLength);
+			    return Content.Substring(0, excerptMaxLength);
 		    }
 	    }
 
 	    public DateTime Published { get; set; }
+		public bool IsVisible { get; set; }
 		public List<BlogComment> Comments { get; set; }
     }
 }
