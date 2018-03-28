@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using SamsWebsite.Db;
+using SamsWebsite.Models.GitHub;
 
 namespace SamsWebsite.Controllers
 {
@@ -34,14 +35,11 @@ namespace SamsWebsite.Controllers
 		    using (var httpClient = new HttpClient())
 		    {
 			    httpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0");
-				httpClient.Timeout = TimeSpan.FromMinutes(2);
 
-			    //TODO Figure out why GetStringAsync throws an HTTPException
 				var response = await httpClient.GetStringAsync(new Uri("https://api.github.com/users/retucex/repos"));
+			    var repositories = Converter.FromJson(response);
 
-			    var releases = JArray.Parse(response);
-
-			    return View(releases.ToString());
+			    return View(repositories);
 			}
 	    }
 
