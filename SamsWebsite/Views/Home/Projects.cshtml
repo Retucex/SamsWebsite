@@ -3,14 +3,17 @@
     ViewData["Title"] = "SLIInc - Projects";
 }
 
-@foreach (var r in Model)
-{
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">@r.Name</h5>
-            <p class="card-text">@r.Description</p>
-            <a href=@r.HtmlUrl target="_blank" class="btn btn-primary">View on GitHub</a>
-        </div>
+<div class="container-fluid">
+    <div class="project-row">
+        @foreach (var r in Model)
+        {
+            <div class="project-card">
+                <div class="card-body">
+                    <h5 class="card-title">@r.Name</h5>
+                    <p class="card-text">@r.Description</p>
+                    <a href=@r.HtmlUrl target="_blank" class="btn btn-primary">View on GitHub</a>
+                </div>
+            </div>
+        }
     </div>
-}
+</div>

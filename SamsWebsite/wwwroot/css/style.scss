@@ -1,0 +1,12 @@
+﻿@import '../lib/bootstrap/scss/bootstrap.scss';
+
+.project-row {
+    @extend .row;
+    align-content: center;
+}
+
+.project-card {
+    @extend .card;
+    width: 20rem;
+    margin: 5px;
+}
