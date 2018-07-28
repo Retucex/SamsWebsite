@@ -16,71 +16,71 @@ const Dropdown = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  const NAME                     = 'dropdown'
-  const VERSION                  = '4.0.0'
-  const DATA_KEY                 = 'bs.dropdown'
-  const EVENT_KEY                = `.${DATA_KEY}`
-  const DATA_API_KEY             = '.data-api'
-  const JQUERY_NO_CONFLICT       = $.fn[NAME]
-  const ESCAPE_KEYCODE           = 27 // KeyboardEvent.which value for Escape (Esc) key
-  const SPACE_KEYCODE            = 32 // KeyboardEvent.which value for space key
-  const TAB_KEYCODE              = 9 // KeyboardEvent.which value for tab key
-  const ARROW_UP_KEYCODE         = 38 // KeyboardEvent.which value for up arrow key
-  const ARROW_DOWN_KEYCODE       = 40 // KeyboardEvent.which value for down arrow key
+  const NAME = 'dropdown'
+  const VERSION = '4.0.0'
+  const DATA_KEY = 'bs.dropdown'
+  const EVENT_KEY = `.${DATA_KEY}`
+  const DATA_API_KEY = '.data-api'
+  const JQUERY_NO_CONFLICT = $.fn[NAME]
+  const ESCAPE_KEYCODE = 27 // KeyboardEvent.which value for Escape (Esc) key
+  const SPACE_KEYCODE = 32 // KeyboardEvent.which value for space key
+  const TAB_KEYCODE = 9 // KeyboardEvent.which value for tab key
+  const ARROW_UP_KEYCODE = 38 // KeyboardEvent.which value for up arrow key
+  const ARROW_DOWN_KEYCODE = 40 // KeyboardEvent.which value for down arrow key
   const RIGHT_MOUSE_BUTTON_WHICH = 3 // MouseEvent.which value for the right button (assuming a right-handed mouse)
-  const REGEXP_KEYDOWN           = new RegExp(`${ARROW_UP_KEYCODE}|${ARROW_DOWN_KEYCODE}|${ESCAPE_KEYCODE}`)
+  const REGEXP_KEYDOWN = new RegExp(`${ARROW_UP_KEYCODE}|${ARROW_DOWN_KEYCODE}|${ESCAPE_KEYCODE}`)
 
   const Event = {
-    HIDE             : `hide${EVENT_KEY}`,
-    HIDDEN           : `hidden${EVENT_KEY}`,
-    SHOW             : `show${EVENT_KEY}`,
-    SHOWN            : `shown${EVENT_KEY}`,
-    CLICK            : `click${EVENT_KEY}`,
-    CLICK_DATA_API   : `click${EVENT_KEY}${DATA_API_KEY}`,
-    KEYDOWN_DATA_API : `keydown${EVENT_KEY}${DATA_API_KEY}`,
-    KEYUP_DATA_API   : `keyup${EVENT_KEY}${DATA_API_KEY}`
+    HIDE: `hide${EVENT_KEY}`,
+    HIDDEN: `hidden${EVENT_KEY}`,
+    SHOW: `show${EVENT_KEY}`,
+    SHOWN: `shown${EVENT_KEY}`,
+    CLICK: `click${EVENT_KEY}`,
+    CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`,
+    KEYDOWN_DATA_API: `keydown${EVENT_KEY}${DATA_API_KEY}`,
+    KEYUP_DATA_API: `keyup${EVENT_KEY}${DATA_API_KEY}`
   }
 
   const ClassName = {
-    DISABLED  : 'disabled',
-    SHOW      : 'show',
-    DROPUP    : 'dropup',
-    DROPRIGHT : 'dropright',
-    DROPLEFT  : 'dropleft',
-    MENURIGHT : 'dropdown-menu-right',
-    MENULEFT  : 'dropdown-menu-left',
-    POSITION_STATIC : 'position-static'
+    DISABLED: 'disabled',
+    SHOW: 'show',
+    DROPUP: 'dropup',
+    DROPRIGHT: 'dropright',
+    DROPLEFT: 'dropleft',
+    MENURIGHT: 'dropdown-menu-right',
+    MENULEFT: 'dropdown-menu-left',
+    POSITION_STATIC: 'position-static'
   }
 
   const Selector = {
-    DATA_TOGGLE   : '[data-toggle="dropdown"]',
-    FORM_CHILD    : '.dropdown form',
-    MENU          : '.dropdown-menu',
-    NAVBAR_NAV    : '.navbar-nav',
-    VISIBLE_ITEMS : '.dropdown-menu .dropdown-item:not(.disabled)'
+    DATA_TOGGLE: '[data-toggle="dropdown"]',
+    FORM_CHILD: '.dropdown form',
+    MENU: '.dropdown-menu',
+    NAVBAR_NAV: '.navbar-nav',
+    VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled)'
   }
 
   const AttachmentMap = {
-    TOP       : 'top-start',
-    TOPEND    : 'top-end',
-    BOTTOM    : 'bottom-start',
-    BOTTOMEND : 'bottom-end',
-    RIGHT     : 'right-start',
-    RIGHTEND  : 'right-end',
-    LEFT      : 'left-start',
-    LEFTEND   : 'left-end'
+    TOP: 'top-start',
+    TOPEND: 'top-end',
+    BOTTOM: 'bottom-start',
+    BOTTOMEND: 'bottom-end',
+    RIGHT: 'right-start',
+    RIGHTEND: 'right-end',
+    LEFT: 'left-start',
+    LEFTEND: 'left-end'
   }
 
   const Default = {
-    offset      : 0,
-    flip        : true,
-    boundary    : 'scrollParent'
+    offset: 0,
+    flip: true,
+    boundary: 'scrollParent'
   }
 
   const DefaultType = {
-    offset      : '(number|string|function)',
-    flip        : 'boolean',
-    boundary    : '(string|element)'
+    offset: '(number|string|function)',
+    flip: 'boolean',
+    boundary: '(string|element)'
   }
 
   /**
@@ -91,10 +91,10 @@ const Dropdown = (($) => {
 
   class Dropdown {
     constructor(element, config) {
-      this._element  = element
-      this._popper   = null
-      this._config   = this._getConfig(config)
-      this._menu     = this._getMenuElement()
+      this._element = element
+      this._popper = null
+      this._config = this._getConfig(config)
+      this._menu = this._getMenuElement()
       this._inNavbar = this._detectNavbar()
 
       this._addEventListeners()
@@ -121,7 +121,7 @@ const Dropdown = (($) => {
         return
       }
 
-      const parent   = Dropdown._getParentFromElement(this._element)
+      const parent = Dropdown._getParentFromElement(this._element)
       const isActive = $(this._menu).hasClass(ClassName.SHOW)
 
       Dropdown._clearMenus()
@@ -171,7 +171,7 @@ const Dropdown = (($) => {
       // only needed because of broken event delegation on iOS
       // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
       if ('ontouchstart' in document.documentElement &&
-         $(parent).closest(Selector.NAVBAR_NAV).length === 0) {
+        $(parent).closest(Selector.NAVBAR_NAV).length === 0) {
         $('body').children().on('mouseover', null, $.noop)
       }
 
@@ -334,8 +334,8 @@ const Dropdown = (($) => {
         }
 
         if (event && (event.type === 'click' &&
-            /input|textarea/i.test(event.target.tagName) || event.type === 'keyup' && event.which === TAB_KEYCODE) &&
-            $.contains(parent, event.target)) {
+          /input|textarea/i.test(event.target.tagName) || event.type === 'keyup' && event.which === TAB_KEYCODE) &&
+          $.contains(parent, event.target)) {
           continue
         }
 
@@ -394,11 +394,11 @@ const Dropdown = (($) => {
         return
       }
 
-      const parent   = Dropdown._getParentFromElement(this)
+      const parent = Dropdown._getParentFromElement(this)
       const isActive = $(parent).hasClass(ClassName.SHOW)
 
       if (!isActive && (event.which !== ESCAPE_KEYCODE || event.which !== SPACE_KEYCODE) ||
-           isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
+        isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
         if (event.which === ESCAPE_KEYCODE) {
           const toggle = $(parent).find(Selector.DATA_TOGGLE)[0]
           $(toggle).trigger('focus')

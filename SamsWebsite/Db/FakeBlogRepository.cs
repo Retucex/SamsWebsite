@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using SamsWebsite.Models;
 
 namespace SamsWebsite.Db
 {
-    public class FakeBlogRepository : IBlogRepository
-    {
-	    static BlogPost bp1;
-	    static BlogPost bp2;
-	    static BlogComment c1;
-	    static BlogComment c2;
-	    static BlogComment c3;
+	public class FakeBlogRepository : IBlogRepository
+	{
+		private static BlogPost bp1;
+		private static BlogPost bp2;
+		private static BlogComment c1;
+		private static BlogComment c2;
+		private static BlogComment c3;
 
 		static FakeBlogRepository()
-	    {
+		{
 			bp1 = new BlogPost()
 			{
 				BlogPostID = 1,
@@ -76,7 +75,6 @@ namespace SamsWebsite.Db
 				Comment = "You're SO cool",
 				Published = new DateTime(2017, 8, 7, 17, 30, 12),
 				BlogPost = bp1
-
 			};
 
 			c3 = new BlogComment()
@@ -86,14 +84,13 @@ namespace SamsWebsite.Db
 				Comment = "I'm still doing my part! newline\n(strong tag)<strong>go team!</strong>",
 				Published = new DateTime(2017, 7, 7, 17, 50, 9),
 				BlogPost = bp2
-
 			};
 
-			bp1.Comments.AddRange(new []{c1, c2});
+			bp1.Comments.AddRange(new[] { c1, c2 });
 			bp2.Comments.Add(c3);
 		}
 
 		public IQueryable<BlogPost> BlogPosts => new List<BlogPost> { bp1, bp2 }.AsQueryable();
-	    public IQueryable<BlogComment> BlogComments => new List<BlogComment> { c1, c2, c3 }.AsQueryable();
-    }
+		public IQueryable<BlogComment> BlogComments => new List<BlogComment> { c1, c2, c3 }.AsQueryable();
+	}
 }

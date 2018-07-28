@@ -18,14 +18,12 @@
 #qunit-testrunner-toolbar, #qunit-filteredTest, #qunit-userAgent, #qunit-testresult, #qunit-tests li { font-size: small; }
 #qunit-tests { font-size: smaller; }
 
-
 /** Resets */
 
 #qunit-tests, #qunit-header, #qunit-banner, #qunit-filteredTest, #qunit-userAgent, #qunit-testresult, #qunit-modulefilter {
 	margin: 0;
 	padding: 0;
 }
-
 
 /** Header (excluding toolbar) */
 
@@ -68,7 +66,6 @@
 	background-color: #2B81AF;
 	text-shadow: rgba(0, 0, 0, 0.5) 2px 2px 1px;
 }
-
 
 /** Toolbar */
 
@@ -205,7 +202,6 @@
 	display: block;
 	padding-left: 0.15em;
 }
-
 
 /** Tests: Pass/Fail */
 
@@ -374,7 +370,6 @@
 #qunit-tests .fail .test-expected           { color: #008000; }
 
 #qunit-banner.qunit-fail                    { background-color: #EE5757; }
-
 
 /*** Aborted tests */
 #qunit-tests .aborted { color: #000; background-color: orange; }

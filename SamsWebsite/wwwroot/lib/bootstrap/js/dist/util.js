@@ -77,7 +77,6 @@ var Util = function ($) {
    * --------------------------------------------------------------------------
    */
 
-
   var Util = {
     TRANSITION_END: 'bsTransitionEnd',
     getUID: function getUID(prefix) {
@@ -94,7 +93,6 @@ var Util = function ($) {
       if (!selector || selector === '#') {
         selector = element.getAttribute('href') || '';
       } // If it's an ID
-
 
       if (selector.charAt(0) === '#') {
         selector = escapeId(selector);

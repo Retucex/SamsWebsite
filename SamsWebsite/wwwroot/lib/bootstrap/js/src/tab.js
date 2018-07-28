@@ -15,38 +15,38 @@ const Tab = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  const NAME                = 'tab'
-  const VERSION             = '4.0.0'
-  const DATA_KEY            = 'bs.tab'
-  const EVENT_KEY           = `.${DATA_KEY}`
-  const DATA_API_KEY        = '.data-api'
-  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const NAME = 'tab'
+  const VERSION = '4.0.0'
+  const DATA_KEY = 'bs.tab'
+  const EVENT_KEY = `.${DATA_KEY}`
+  const DATA_API_KEY = '.data-api'
+  const JQUERY_NO_CONFLICT = $.fn[NAME]
   const TRANSITION_DURATION = 150
 
   const Event = {
-    HIDE           : `hide${EVENT_KEY}`,
-    HIDDEN         : `hidden${EVENT_KEY}`,
-    SHOW           : `show${EVENT_KEY}`,
-    SHOWN          : `shown${EVENT_KEY}`,
-    CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`
+    HIDE: `hide${EVENT_KEY}`,
+    HIDDEN: `hidden${EVENT_KEY}`,
+    SHOW: `show${EVENT_KEY}`,
+    SHOWN: `shown${EVENT_KEY}`,
+    CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`
   }
 
   const ClassName = {
-    DROPDOWN_MENU : 'dropdown-menu',
-    ACTIVE        : 'active',
-    DISABLED      : 'disabled',
-    FADE          : 'fade',
-    SHOW          : 'show'
+    DROPDOWN_MENU: 'dropdown-menu',
+    ACTIVE: 'active',
+    DISABLED: 'disabled',
+    FADE: 'fade',
+    SHOW: 'show'
   }
 
   const Selector = {
-    DROPDOWN              : '.dropdown',
-    NAV_LIST_GROUP        : '.nav, .list-group',
-    ACTIVE                : '.active',
-    ACTIVE_UL             : '> li > .active',
-    DATA_TOGGLE           : '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
-    DROPDOWN_TOGGLE       : '.dropdown-toggle',
-    DROPDOWN_ACTIVE_CHILD : '> .dropdown-menu .active'
+    DROPDOWN: '.dropdown',
+    NAV_LIST_GROUP: '.nav, .list-group',
+    ACTIVE: '.active',
+    ACTIVE_UL: '> li > .active',
+    DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
+    DROPDOWN_TOGGLE: '.dropdown-toggle',
+    DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
   }
 
   /**
@@ -70,9 +70,9 @@ const Tab = (($) => {
 
     show() {
       if (this._element.parentNode &&
-          this._element.parentNode.nodeType === Node.ELEMENT_NODE &&
-          $(this._element).hasClass(ClassName.ACTIVE) ||
-          $(this._element).hasClass(ClassName.DISABLED)) {
+        this._element.parentNode.nodeType === Node.ELEMENT_NODE &&
+        $(this._element).hasClass(ClassName.ACTIVE) ||
+        $(this._element).hasClass(ClassName.DISABLED)) {
         return
       }
 
@@ -102,7 +102,7 @@ const Tab = (($) => {
       $(this._element).trigger(showEvent)
 
       if (showEvent.isDefaultPrevented() ||
-         hideEvent.isDefaultPrevented()) {
+        hideEvent.isDefaultPrevented()) {
         return
       }
 
@@ -196,7 +196,7 @@ const Tab = (($) => {
       $(element).addClass(ClassName.SHOW)
 
       if (element.parentNode &&
-          $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
+        $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
         const dropdownElement = $(element).closest(Selector.DROPDOWN)[0]
         if (dropdownElement) {
           $(dropdownElement).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE)

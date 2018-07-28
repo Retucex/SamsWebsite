@@ -88,7 +88,6 @@ const Util = (($) => {
    */
 
   const Util = {
-
     TRANSITION_END: 'bsTransitionEnd',
 
     getUID(prefix) {
@@ -138,8 +137,8 @@ const Util = (($) => {
       for (const property in configTypes) {
         if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
           const expectedTypes = configTypes[property]
-          const value         = config[property]
-          const valueType     = value && Util.isElement(value)
+          const value = config[property]
+          const valueType = value && Util.isElement(value)
             ? 'element' : toType(value)
 
           if (!new RegExp(expectedTypes).test(valueType)) {

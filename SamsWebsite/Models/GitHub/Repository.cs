@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+﻿using Newtonsoft.Json;
 
 namespace SamsWebsite.Models.GitHub
 {
@@ -222,6 +217,4 @@ namespace SamsWebsite.Models.GitHub
 		[JsonProperty("default_branch")]
 		public string DefaultBranch { get; set; }
 	}
-
-
 }

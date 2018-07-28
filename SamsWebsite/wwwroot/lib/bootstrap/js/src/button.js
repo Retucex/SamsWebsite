@@ -14,31 +14,31 @@ const Button = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  const NAME                = 'button'
-  const VERSION             = '4.0.0'
-  const DATA_KEY            = 'bs.button'
-  const EVENT_KEY           = `.${DATA_KEY}`
-  const DATA_API_KEY        = '.data-api'
-  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const NAME = 'button'
+  const VERSION = '4.0.0'
+  const DATA_KEY = 'bs.button'
+  const EVENT_KEY = `.${DATA_KEY}`
+  const DATA_API_KEY = '.data-api'
+  const JQUERY_NO_CONFLICT = $.fn[NAME]
 
   const ClassName = {
-    ACTIVE : 'active',
-    BUTTON : 'btn',
-    FOCUS  : 'focus'
+    ACTIVE: 'active',
+    BUTTON: 'btn',
+    FOCUS: 'focus'
   }
 
   const Selector = {
-    DATA_TOGGLE_CARROT : '[data-toggle^="button"]',
-    DATA_TOGGLE        : '[data-toggle="buttons"]',
-    INPUT              : 'input',
-    ACTIVE             : '.active',
-    BUTTON             : '.btn'
+    DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
+    DATA_TOGGLE: '[data-toggle="buttons"]',
+    INPUT: 'input',
+    ACTIVE: '.active',
+    BUTTON: '.btn'
   }
 
   const Event = {
-    CLICK_DATA_API      : `click${EVENT_KEY}${DATA_API_KEY}`,
-    FOCUS_BLUR_DATA_API : `focus${EVENT_KEY}${DATA_API_KEY} ` +
-                            `blur${EVENT_KEY}${DATA_API_KEY}`
+    CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`,
+    FOCUS_BLUR_DATA_API: `focus${EVENT_KEY}${DATA_API_KEY} ` +
+      `blur${EVENT_KEY}${DATA_API_KEY}`
   }
 
   /**
